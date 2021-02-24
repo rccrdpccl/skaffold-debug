@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: test
+deploy:
+  helm:
+    releases:
+      - name: test-v2
+        chartPath: ./charts/test
+        valuesFiles:
+          - ./charts/test/values.yaml
+        createNamespace: true
+        skipBuildDependencies: false
+        namespace: test-v2
