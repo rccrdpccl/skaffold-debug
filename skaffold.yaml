@@ -9,6 +9,7 @@ deploy:
         chartPath: ./charts/test
         valuesFiles:
           - ./charts/test/values.yaml
+          - ./charts/test/secrets.values.yaml
         createNamespace: true
-        skipBuildDependencies: false
         namespace: test-v2
+        useHelmSecrets: true
